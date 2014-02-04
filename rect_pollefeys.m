@@ -1,6 +1,6 @@
 function [i1_rect,i2_rect] = rect_pollefeys(F,i1,i2)
 
-% function [i1_rect,i2_rect] = rect_pollefeys(i1,i2,F,P1,P2)
+% function [i1_rect,i2_rect] = rect_pollefeys(i1,i2,F)
 %
 %	[i1_rect,i2_rect]=rect_pollefeys(i1,i2,F,P1,P2)
 %
@@ -14,7 +14,7 @@ function [i1_rect,i2_rect] = rect_pollefeys(F,i1,i2)
 % Outputs:
 %   [i1_rect,i2_rect] - rectified stereo pair
 
-dbg = 1;
+dbg = 0;
 
 [w,h,~] = size(i1);
 
@@ -66,7 +66,7 @@ while theta <= theta_bounds(2)
         continue;
     end
     
-    if 1,
+    if dbg,
         figure(h1);
         hold on;
         x = round(ps1{row}(1,:));
